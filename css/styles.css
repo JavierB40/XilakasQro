@@ -1,3 +1,4 @@
+/* ====================== RESET ====================== */
 * {
   margin: 0;
   padding: 0;
@@ -5,160 +6,351 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: #0f0e0e;
-  color: #f0f0f0;
-  line-height: 1.5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f5eb;
+  color: #333;
+  line-height: 1.6;
 }
 
-.container {
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.hero {
-  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.4)), url('../images/alitas-hero.jpg') center/cover no-repeat;
-  height: 70vh;
-  min-height: 500px;
-  display: flex;
-  align-items: center;
-  text-align: center;
+/* ====================== HEADER ====================== */
+header {
+  background: #2c1a0d;
   color: white;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.hero h1 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 5.5rem;
-  margin-bottom: 10px;
-  letter-spacing: 2px;
-}
-
-.hero p {
-  font-size: 1.4rem;
-  margin-bottom: 30px;
+nav {
+  max-width: 1550px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-  max-width: 180px;
-  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
 }
 
-.btn {
-  display: inline-block;
-  padding: 16px 32px;
-  font-size: 1.2rem;
-  font-weight: 600;
+.logo img {
+  height: 80px;
+  width: auto;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.2rem;
+}
+
+.nav-links a {
+  color: white;
   text-decoration: none;
-  border-radius: 50px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #e67e22;
+}
+
+/* ====================== SLIDER DE PROMOCIONES ====================== */
+/* Ajuste del contenedor del slider para que se vea bien */
+.promociones-slider {
+  position: relative;
+  height: auto;            /* Dejamos que se ajuste al contenido */
+  min-height: 650px;       /* Altura mínima para que no quede muy pequeño */
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease;
+  display: none;
+}
+
+.slide.active {
+  opacity: 1;
+  display: block;
+}
+
+/* Imagen específica para el buffet con el tamaño que quieres */
+.slide-image  {
+  width: 100%;           /* Ocupa todo el ancho disponible */
+  height: auto;          /* Mantiene la proporción */
+  max-height: 580px;     /* Limita la altura máxima */
+}
+
+/* Ajuste responsive del alto del slider */
+@media (max-width: 1200px) {
+  .promociones-slider { height: 620px; }
+}
+
+@media (max-width: 768px) {
+  .promociones-slider { height: 500px; }
+  .slide img {
+    object-position: center 30%;    /* Ajuste para móvil */
+  }
+}
+
+@media (max-width: 480px) {
+  .promociones-slider { height: 420px; }
+}
+
+.slide-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85), transparent);
+  color: white;
+  padding: 3rem 2rem 2rem;
+  text-align: center;
+}
+
+.slide-content h2 {
+  font-size: 2.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.slide-content p {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.promo-tag {
+  background: #e67e22;
+  color: white;
+  padding: 8px 24px;
+  border-radius: 30px;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
   transition: all 0.3s;
 }
 
-.whatsapp {
-  background: #25D366;
-  color: white;
+.slider-btn:hover {
+  background: #e67e22;
 }
 
-.whatsapp:hover {
-  background: #20b858;
-  transform: translateY(-3px);
+.prev { left: 25px; }
+.next { right: 25px; }
+
+.slider-dots {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 10;
 }
 
-.menu-section {
-  padding: 60px 0;
+.dot {
+  width: 14px;
+  height: 14px;
+  background: rgba(255,255,255,0.5);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.category {
-  margin-bottom: 60px;
+.dot.active {
+  background: #e67e22;
+  transform: scale(1.3);
 }
 
-.category h2 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 3.5rem;
-  color: #ff3b30;
+/* ====================== SECCIÓN MISIÓN ====================== */
+.hero {
+  background-color: #f5e8c7;
+  padding: 6rem 2rem 4rem;
   text-align: center;
-  margin-bottom: 40px;
-  letter-spacing: 1px;
 }
 
-.grid {
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  color: #8d5524;
+}
+
+.mision {
+  max-width: 900px;
+  margin: 0 auto;
+  background: white;
+  padding: 3rem 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.mision h2 {
+  color: #c0392b;
+  font-size: 2.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.mision-texto {
+  color: #333;
+  font-size: 1.18rem;
+  line-height: 1.75;
+  text-align: justify;
+}
+
+/* ====================== SECCIONES COMIDA Y BEBIDAS ====================== */
+#comida, #bebidas {
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+#comida h2, #bebidas h2 {
+  color: #8d5524;
+  font-size: 2.8rem;
+  margin-bottom: 3rem;
+}
+
+.comida-imagenes {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 2rem;
 }
 
-.item {
-  background: #1a1a1a;
+.imagen-menu {
+  position: relative;
   border-radius: 16px;
   overflow: hidden;
-  transition: transform 0.3s;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease;
+  cursor: pointer;
 }
 
-.item:hover {
-  transform: translateY(-12px);
+.imagen-menu:hover {
+  transform: scale(1.03);
 }
 
-.item img {
+.imagen-menu img {
   width: 100%;
-  height: 220px;
+  height: 100%;
   object-fit: cover;
-}
-
-.info {
-  padding: 20px;
-  text-align: center;
-}
-
-.info h3 {
-  font-size: 1.4rem;
-  margin-bottom: 8px;
-}
-
-.price {
   display: block;
-  color: #ffcc00;
-  font-weight: 700;
-  font-size: 1.3rem;
-  margin-top: 10px;
 }
 
-.price-big {
-  font-size: 3rem;
-  color: #ff3b30;
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  color: white;
+  padding: 2rem 1.5rem 1.5rem;
   text-align: center;
+}
+
+.overlay h3 {
+  font-size: 2rem;
+  margin: 0;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.click-hint {
+  font-size: 0.95rem;
+  margin-top: 8px;
+  opacity: 0.9;
+}
+
+/* ====================== MODAL ====================== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.92);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 95%;
+  max-height: 95%;
+}
+
+.modal-content img {
+  max-width: 100%;
+  max-height: 92vh;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
+}
+
+.modal-close {
+  position: absolute;
+  top: -18px;
+  right: -18px;
+  color: white;
+  font-size: 38px;
   font-weight: bold;
+  cursor: pointer;
+  background: #c0392b;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.highlight {
-  text-align: center;
-  font-size: 1.5rem;
-  margin: 20px 0;
-  color: #ffcc00;
+.modal-close:hover {
+  background: #e74c3c;
+  transform: scale(1.1);
 }
 
-footer {
-  background: #000;
-  padding: 50px 0 30px;
-  text-align: center;
+/* ====================== RESPONSIVE ====================== */
+@media (max-width: 1200px) {
+  .promociones-slider { height: 550px; }
 }
 
-footer .btn {
-  margin: 20px 0 30px;
+@media (max-width: 768px) {
+  .promociones-slider { height: 420px; }
+  .logo { font-size: 2.2rem; }
+  .nav-links { gap: 1.2rem; font-size: 0.95rem; }
+  .slide-content h2 { font-size: 2.1rem; }
+  .comida-imagenes { grid-template-columns: 1fr; }
+  .overlay h3 { font-size: 1.7rem; }
 }
 
-.small {
-  font-size: 0.9rem;
-  opacity: 0.7;
-  margin-top: 30px;
-}
-
-.center {
-  text-align: center;
-  font-size: 1.3rem;
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .hero h1 { font-size: 4rem; }
-  .category h2 { font-size: 2.8rem; }
+@media (max-width: 480px) {
+  .promociones-slider { height: 360px; }
 }

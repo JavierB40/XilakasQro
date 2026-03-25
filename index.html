@@ -2,136 +2,213 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <!-- # para visualizar en cel o tablets #-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Xilakas Wings Querétaro • Menú</title>
-  <!-- # la descripción que Google (y otros buscadores) suele mostrar debajo del título #-->
-  <meta name="description" content="Las mejores alitas, boneless, hamburguesas y más en Querétaro. ¡Pide ya!">
+  <title>Xilakas Wings - Alitas con Sabor Prehispánico</title>
   <link rel="stylesheet" href="css/styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- # carga fuentes #-->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
-  <!-- Icono WhatsApp -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Header / Hero -->
-  <header class="hero">
-    <div class="container">
-      <img src="img/Logo_Blanco.png" alt="Xilakas Wings" class="logo">
-      <h1>Xilakas Wings Querétaro</h1>
-      <p>Alitas • Boneless • Hamburguesas • Snacks • Cerveza fría</p>
-      <div class="btn-group">
-        <a href="https://wa.me/524421234567?text=Hola%20quiero%20ver%20el%20menú%20y%20pedir" class="btn whatsapp" target="_blank">
-          <i class="fab fa-whatsapp"></i> Pedir por WhatsApp
-        </a>
+  <!-- HEADER -->
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="img/Logo_Blanco.png" alt="Xilakas Wings">
+        <span>Xilakas Wings</span>
       </div>
-    </div>
+      <div class="nav-links">
+        <a href="#mision">Misión</a>
+        <a href="#comida">Comida</a>
+        <a href="#bebidas">Bebidas</a>
+        <a href="#ubicaciones">Ubicaciones</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
   </header>
 
-  <!-- Menú -->
-  <main class="menu-section">
-    <div class="container">
-
-      <!-- Categoría 1 -->
-      <section class="category">
-        <h2>Alitas</h2>
-        <div class="grid">
-          <div class="item">
-            <img src="images/buffalo.jpg" alt="Alitas Buffalo">
-            <div class="info">
-              <h3>Alitas Buffalo</h3>
-              <p>Clásico picante americano con mantequilla</p>
-              <span class="price">10 piezas $185</span>
-              <span class="price">20 piezas $340</span>
-            </div>
-          </div>
-          <div class="item">
-            <img src="images/habanero.jpg" alt="Alitas Habanero">
-            <div class="info">
-              <h3>Alitas Habanero Xilakas</h3>
-              <p>Nivel dios del infierno (muy picante)</p>
-              <span class="price">10 piezas $195</span>
-            </div>
-          </div>
-          <!-- Agrega 3-6 alitas más... -->
+  <!-- SLIDER DE PROMOCIONES -->
+  <section class="promociones-slider" id="promociones">
+    <div class="slider-container">
+      <div class="slide">
+        <img src="img/RW_WEB.jpg" alt="2x1 en Alitas" class="slide-image">
+        <div class="slide-content">
+          <h2>¡2x1 en Alitas los Miércoles!</h2>
+          <p>Compra 10 alitas y lleva otras 10 GRATIS</p>
+          <span class="promo-tag">Solo Miércoles</span>
         </div>
-      </section>
+      </div>
 
-      <!-- Categoría 2 -->
-      <section class="category">
-        <h2>Boneless</h2>
-        <div class="grid">
-          <div class="item">
-            <img src="images/queso.jpg" alt="Boneless Queso">
-            <div class="info">
-              <h3>Boneless Queso</h3>
-              <p>Crocantes con salsa tres quesos</p>
-              <span class="price">300 g $220</span>
-            </div>
-          </div>
-          <!-- más boneless... -->
+      <div class="slide">
+        <img 
+          src="img/promos/pbuffete.jpg" 
+          alt="Buffet Libre"
+          class="slide-image">
+        <div class="slide-content">
+          <h2>Buffet Libre por $239</h2>
+          <p>Incluye alitas, boneless, papas y más</p>
+          <span class="promo-tag">Martes a Domingo</span>
         </div>
-      </section>
+      </div>
 
-      <!-- Otras categorías -->
-      <section class="category">
-        <h2>Entradas / Snacks</h2>
-        <div class="grid">
-          <div class="item">
-            <img src="images/papas.jpg" alt="Papas">
-            <h3>Papas Makal Clásicas</h3>
-            <span class="price">$95</span>
-          </div>
-          <div class="item">
-            <img src="images/aros-cebolla.jpg" alt="Aros">
-            <h3>Wóolis de Cebolla</h3>
-            <span class="price">$110</span>
-          </div>
-          <!-- Agrega más -->
+      <div class="slide">
+        <img 
+          src="img/promos/phamburguesas.jpg" 
+          alt="Hamburguesas a $129"
+          class="slide-image">
+        <div class="slide-content">
+          <h2>Cerveza Nacional a $45</h2>
+          <p>Toda la cerveza nacional a solo 45 pesos</p>
+          <span class="promo-tag">Martes y Miércoles</span>
         </div>
-      </section>
-
-      <section class="category">
-        <h2>Hamburguesas</h2>
-        <div class="grid">
-          <div class="item">
-            <h3>Hamburguesa Buffalo</h3>
-            <p>Con alitas deshebradas y salsa buffalo</p>
-            <span class="price">$189</span>
-          </div>
-          <!-- más... -->
-        </div>
-      </section>
-
-      <section class="category">
-        <h2>Bebidas</h2>
-        <p class="center">Cerveza fría, refrescos, aguas frescas, micheladas...</p>
-        <!-- Puedes listar o solo poner texto simple -->
-      </section>
-
-      <section class="category">
-        <h2>Buffet Sin Límites</h2>
-        <p class="highlight">¡Come todo lo que quieras! Alitas + Boneless + Papas + Aros + Salsas</p>
-        <p class="price-big">$239 por persona</p>
-      </section>
-
+      </div>
     </div>
-  </main>
 
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-      <p>Xilakas Wings Querétaro • Plaza San Diego Local 132</p>
-      <p>Av. San Diego 2, Felipe Carrillo Puerto, Querétaro</p>
-      <a href="https://wa.me/524421234567?text=Hola%20quiero%20pedir" class="btn whatsapp bottom">
-        <i class="fab fa-whatsapp"></i> Ordena ahora
-      </a>
-      <p class="small">Creado con ❤️ para los amantes de las alitas • 2026</p>
+    <button class="slider-btn prev">❮</button>
+    <button class="slider-btn next">❯</button>
+    <div class="slider-dots"></div>
+  </section>
+
+  <!-- SECCIÓN MISIÓN -->
+  <section class="hero" id="mision">
+    <h1>Xilakas Wings</h1>
+    <div class="mision">
+      
+      <p class="mision-texto">
+        En Xilakas Wings, nos dedicamos a ofrecer una experiencia culinaria única y memorable, fusionando la riqueza cultural prehispánica con innovación gastronómica. Comprometidos con la excelencia, establecemos los más altos estándares de calidad y servicio para brindar a nuestros clientes momentos excepcionales. Valoramos profundamente la autenticidad, el respeto por los productos y la atención meticulosa a la calidad, asegurando que cada aspecto de nuestra propuesta gastronómica refleje la esencia de nuestra marca.
+      </p>
     </div>
-  </footer>
+  </section>
+
+  <!-- SECCIÓN COMIDA -->
+  <section id="comida">
+    <h2>Menú de Comida</h2>
+    <div class="comida-imagenes">
+      <div class="imagen-menu" data-modal="menu1">
+        <img src="img/comida1.png" alt="Alitas y Boneless" loading="lazy">
+        <div class="overlay">
+          <h3>Alitas & Boneless</h3>
+          <p class="click-hint">Haz clic para ampliar</p>
+        </div>
+      </div>
+
+      <div class="imagen-menu" data-modal="menu2">
+        <img src="img/comida2.png" alt="Tacos y Hamburguesas" loading="lazy">
+        <div class="overlay">
+          <h3>Tacos & Hamburguesas</h3>
+          <p class="click-hint">Haz clic para ampliar</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN BEBIDAS -->
+  <section id="bebidas">
+    <h2>Menú de Bebidas</h2>
+    <div class="comida-imagenes">
+      <div class="imagen-menu" data-modal="bebidas1">
+        <img src="img/bebidas1.png" alt="Cervezas y Refrescos" loading="lazy">
+        <div class="overlay">
+          <h3>Cervezas & Refrescos</h3>
+          <p class="click-hint">Haz clic para ampliar</p>
+        </div>
+      </div>
+
+      <div class="imagen-menu" data-modal="bebidas2">
+        <img src="img/bebidas2.png" alt="Cocteles y Shots" loading="lazy">
+        <div class="overlay">
+          <h3>Cocteles & Shots</h3>
+          <p class="click-hint">Haz clic para ampliar</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL PARA AMPLIAR IMÁGENES -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <img id="modal-image" src="" alt="Menú ampliado">
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    // Slider de promociones
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const dotsContainer = document.querySelector('.slider-dots');
+
+    slides.forEach((_, index) => {
+      const dot = document.createElement('div');
+      dot.classList.add('dot');
+      if (index === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => goToSlide(index));
+      dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.dot');
+
+    function showSlide(index) {
+      slides.forEach(slide => slide.classList.remove('active'));
+      dots.forEach(dot => dot.classList.remove('active'));
+      slides[index].classList.add('active');
+      dots[index].classList.add('active');
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      let next = currentSlide + 1;
+      if (next >= slides.length) next = 0;
+      showSlide(next);
+    }
+
+    function prevSlide() {
+      let prev = currentSlide - 1;
+      if (prev < 0) prev = slides.length - 1;
+      showSlide(prev);
+    }
+
+    function goToSlide(index) {
+      showSlide(index);
+    }
+
+    document.querySelector('.next').addEventListener('click', nextSlide);
+    document.querySelector('.prev').addEventListener('click', prevSlide);
+    setInterval(nextSlide, 5000);
+    showSlide(0);
+
+    // Modal para ampliar imágenes
+    const modal = document.getElementById('modal');
+    const modalImage = document.getElementById('modal-image');
+    const closeBtn = document.querySelector('.modal-close');
+
+    document.querySelectorAll('.imagen-menu').forEach(item => {
+      item.addEventListener('click', function() {
+        const imgSrc = this.querySelector('img').src;
+        modalImage.src = imgSrc;
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === "Escape" && modal.style.display === 'flex') {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+    });
+  </script>
 
 </body>
 </html>
