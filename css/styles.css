@@ -63,8 +63,7 @@ nav {
   color: #e67e22;
 }
 
-/* ====================== SLIDER DE PROMOCIONES ====================== */
-/* Ajuste del contenedor del slider para que se vea bien */
+
 .promociones-slider {
   position: relative;
   height: auto;            /* Dejamos que se ajuste al contenido */
@@ -89,7 +88,7 @@ nav {
   display: block;
 }
 
-/* Imagen específica para el buffet con el tamaño que quieres */
+
 .slide-image  {
   width: 100%;           /* Ocupa todo el ancho disponible */
   height: auto;          /* Mantiene la proporción */
@@ -189,7 +188,7 @@ nav {
   transform: scale(1.3);
 }
 
-/* ====================== SECCIÓN MISIÓN ====================== */
+
 .hero {
   background-color: #f5e8c7;
   padding: 6rem 2rem 4rem;
@@ -224,7 +223,7 @@ nav {
   text-align: justify;
 }
 
-/* ====================== SECCIONES COMIDA Y BEBIDAS ====================== */
+
 #comida, #bebidas {
   padding: 5rem 2rem;
   text-align: center;
@@ -288,7 +287,7 @@ nav {
   opacity: 0.9;
 }
 
-/* ====================== MODAL ====================== */
+
 .modal {
   display: none;
   position: fixed;
@@ -337,7 +336,7 @@ nav {
   transform: scale(1.1);
 }
 
-/* ====================== RESPONSIVE ====================== */
+
 @media (max-width: 1200px) {
   .promociones-slider { height: 550px; }
 }
